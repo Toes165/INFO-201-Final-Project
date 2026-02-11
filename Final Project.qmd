@@ -1,0 +1,21 @@
+---
+title: "Untitled"
+format: html
+editor: visual
+---
+
+```{r}
+library(dplyr)
+
+
+data_df <-
+  read.csv("C:/Users/Anderson/Downloads/product_details.csv")
+
+data_df <-
+  data_df |>
+  filter(Category == 'Sports & Outdoors | Outdoor Recreation | Skates, Skateboards & Scooters | Skateboarding | Standard Skateboards & Longboards | Longboards') |>
+  select(Uniqe.Id, Product.Name, Selling.Price)
+
+glimpse(data_df)
+
+```
