@@ -1,21 +1,38 @@
 ---
-title: "Untitled"
-format: html
+title: "Final Project"
+format: 
+  html:
+    embed-resources: true
 editor: visual
 ---
 
 ```{r}
 library(dplyr)
 
+#Replace file paths with your own file
 
-data_df <-
+injury_df <-
+  read.csv("C:/Users/Anderson/Downloads/skateboardData_INFO201project(NEISS_2024).csv")
+
+injury_df <-
+  injury_df |>
+  filter(Product_1 == 1333)
+
+glimpse(injury_df)
+
+
+product_df <-
   read.csv("C:/Users/Anderson/Downloads/product_details.csv")
 
-data_df <-
-  data_df |>
+product_df <-
+  product_df |>
   filter(Category == 'Sports & Outdoors | Outdoor Recreation | Skates, Skateboards & Scooters | Skateboarding | Standard Skateboards & Longboards | Longboards') |>
   select(Uniqe.Id, Product.Name, Selling.Price)
 
-glimpse(data_df)
+glimpse(product_df)
+
+
+
+# We are currently struggling to find common columns because all of the data we are finding is currently paywalled.
 
 ```
